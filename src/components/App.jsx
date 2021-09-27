@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import BasketList from './BasketList';
 import GoodsList from './GoodsList';
 import Search from './Search';
 
 import { goods } from '../data/goods';
+import Header from './Header';
 
 const App = () => {
     const [order, setOrder] = useState([]);
@@ -65,6 +66,8 @@ const App = () => {
     };
 
     return (
+        <React.Fragment>
+        <Header/>
         <div className='App'>
             <div className='container'>
                 <Search
@@ -81,6 +84,7 @@ const App = () => {
                 />
             </div>
         </div>
+        </React.Fragment>
     );
 }
 
