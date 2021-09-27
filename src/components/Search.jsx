@@ -11,6 +11,7 @@ const Search = (props) => {
       type="search"
       value={value}
       onChange={onChange}
+      sx={{ mb: "1.5rem" }}
     />
   );
 };
