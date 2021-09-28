@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <Header handleCart={() => setCartOpen(true)} />
+      <Header orderLength={order.length} handleCart={() => setCartOpen(true)} />
       <Container sx={{ mt: "1rem" }}>
         <Search value={search} onChange={handleChange} />
         <GoodsList goods={products} setOrder={addToOrder} />
