@@ -1,15 +1,18 @@
-const BasketItem = (props) => {
-    return (
-        <li className='list-group-item'>
-            {props.name} {props.price} USD x{props.quantity}
-            <button
-                className='btn btn-primary'
-                onClick={() => props.setOrder(props.id)}
-            >
-                 Remove from cart
-            </button>
-        </li>
-    );
+import { Close } from "@mui/icons-material";
+import { IconButton, ListItem, Typography } from "@mui/material";
+
+const BasketItem = ({ removeFromOrder, name, id, price, quantity }) => {
+  return (
+    <ListItem>
+      <Typography variant="body1">
+        {name} {price} USD x{quantity}
+      </Typography>
+
+      <IconButton onClick={() => removeFromOrder(id)}>
+        <Close />
+      </IconButton>
+    </ListItem>
+  );
 };
 
 export default BasketItem;
