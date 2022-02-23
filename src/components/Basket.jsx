@@ -10,8 +10,12 @@ import {
 } from "@mui/material";
 import React from "react";
 import BasketItem from "./BasketItem";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Basket = (props) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const {
     cartOpen,
     closeCart = Function.prototype,
@@ -21,7 +25,7 @@ const Basket = (props) => {
 
   return (
     <Drawer anchor="right" open={cartOpen} onClose={closeCart}>
-      <List sx={{ width: "400px" }}>
+      <List style={{ width: matches ? "400px" : "150px" }}>
         <ListItem>
           <ListItemIcon>
             <ShoppingBasket />
